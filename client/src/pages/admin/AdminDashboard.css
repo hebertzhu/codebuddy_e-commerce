@@ -1,0 +1,229 @@
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.admin-sidebar {
+  width: 280px;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+
+.sidebar-header {
+  padding: 0 2rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 1rem 0;
+}
+
+.nav-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: none;
+  border: none;
+  color: #ecf0f1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.nav-item.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: #3498db;
+  border-right: 3px solid #3498db;
+}
+
+.nav-item svg {
+  font-size: 1.2rem;
+}
+
+.sidebar-footer {
+  padding: 1rem 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.content-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e1e5e9;
+}
+
+.content-header h1 {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+}
+
+.content-header p {
+  color: #7f8c8d;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.content-main {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  min-height: 400px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.access-denied {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 500px;
+}
+
+.access-denied h2 {
+  color: #e74c3c;
+  margin-bottom: 1rem;
+}
+
+.access-denied p {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 968px) {
+  .admin-container {
+    flex-direction: column;
+  }
+  
+  .admin-sidebar {
+    width: 100%;
+    padding: 1rem 0;
+  }
+  
+  .sidebar-nav {
+    display: flex;
+    overflow-x: auto;
+    padding: 0.5rem 1rem;
+  }
+  
+  .nav-item {
+    padding: 0.75rem 1rem;
+    white-space: nowrap;
+    border-right: none;
+    border-bottom: 3px solid transparent;
+  }
+  
+  .nav-item.active {
+    border-right: none;
+    border-bottom: 3px solid #3498db;
+  }
+  
+  .sidebar-footer {
+    display: none;
+  }
+  
+  .admin-content {
+    padding: 1rem;
+  }
+  
+  .content-header h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-nav {
+    gap: 0.5rem;
+  }
+  
+  .nav-item {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .nav-item svg {
+    font-size: 1rem;
+  }
+  
+  .content-main {
+    padding: 1.5rem;
+  }
+  
+  .content-header h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-main {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.nav-item {
+  transition: all 0.2s ease;
+}
+
+/* 滚动条样式 */
+.admin-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.admin-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.admin-content::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.admin-content::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
