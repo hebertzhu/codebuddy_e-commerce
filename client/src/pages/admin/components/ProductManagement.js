@@ -20,7 +20,7 @@ const ProductManagement = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch('http://localhost:5002/api/products');
+      const response = await fetch('http://localhost:5000/api/products');
       if (response.ok) {
         const data = await response.json();
         setProducts(data);
@@ -37,8 +37,8 @@ const ProductManagement = () => {
     try {
       const token = localStorage.getItem('token');
       const url = editingProduct 
-        ? `http://localhost:5002/api/admin/products/${editingProduct._id}`
-        : 'http://localhost:5002/api/admin/products';
+        ? `http://localhost:5000/api/admin/products/${editingProduct._id}`
+        : 'http://localhost:5000/api/admin/products';
       
       const method = editingProduct ? 'PUT' : 'POST';
 
@@ -85,7 +85,7 @@ const ProductManagement = () => {
   const toggleProductStatus = async (productId, isActive) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5002/api/admin/products/${productId}`, {
+      const response = await fetch(`http://localhost:5000/api/admin/products/${productId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

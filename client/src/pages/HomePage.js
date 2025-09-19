@@ -14,7 +14,7 @@ const HomePage = () => {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5002/api/products');
+      const response = await fetch('http://localhost:5000/api/products');
       if (!response.ok) {
         throw new Error('获取商品失败');
       }

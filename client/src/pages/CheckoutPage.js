@@ -38,7 +38,7 @@ const CheckoutPage = () => {
         userId: user?._id
       };
 
-      const response = await fetch('http://localhost:5002/api/orders', {
+      const response = await fetch('http://localhost:5000/api/orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

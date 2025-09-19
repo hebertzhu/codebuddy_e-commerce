@@ -14,7 +14,7 @@ const ProductPage = () => {
 
   const fetchProduct = async () => {
     try {
-      const response = await fetch(`http://localhost:5002/api/products/${id}`);
+      const response = await fetch(`http://localhost:5000/api/products/${id}`);
       if (response.ok) {
         const data = await response.json();
         setProduct(data);

@@ -68,7 +68,7 @@ const ProfilePage = () => {
 
     try {
       const token = getToken();
-      const response = await fetch('http://localhost:5002/api/auth/profile', {
+      const response = await fetch('http://localhost:5000/api/auth/profile', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
